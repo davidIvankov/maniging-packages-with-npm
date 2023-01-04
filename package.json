@@ -2,6 +2,7 @@
 	"author":"David Ivankov",
 	"name": "fcc-learn-npm-package-json",
 	"dependencies": {
+		"@freecodecamp/example":"1.1.0",
 		"express": "^4.14.0"
 	},
 	"description": "A project that does something awesome",
