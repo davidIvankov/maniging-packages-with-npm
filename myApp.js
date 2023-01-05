@@ -6,6 +6,16 @@ app.use(function middlewear(req, res, next){
     next()
 })
 app.use("/public", express.static(__dirname + "/public"))
+app.get("/now", function(req, res, next){
+    req.now = new Date().toString()
+    next()
+
+},
+function(req, res){
+    res.json({
+        time: req.time
+    })
+})
 app.get("/json", function(req, res){
     if(process.env.MESSAGE_STYLE === "uppercase"){
     res.json({
