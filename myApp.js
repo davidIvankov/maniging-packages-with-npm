@@ -6,9 +6,9 @@ app.use(function middlewear(req, res, next){
     next()
 })
 app.use("/public", express.static(__dirname + "/public"))
-app.get("/name", function(req, res){
+app.get("/name?first=firstname&last=lastname", function(req, res){
     res.json({
-        name: "?first=firstname&last=lastname"
+        name: `${req.query.first} ${req.query.last}`
     })
 })
 app.get("/:word/echo", function(req, res){
