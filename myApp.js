@@ -6,6 +6,11 @@ app.use(function middlewear(req, res, next){
     next()
 })
 app.use("/public", express.static(__dirname + "/public"))
+app.get("/:word/echo", function(req, res){
+    res.json({
+        word: req.params.word
+    })
+})
 app.get("/now", function(req, res, next){
     req.time = new Date().toString()
     next()
