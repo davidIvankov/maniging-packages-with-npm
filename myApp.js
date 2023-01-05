@@ -1,6 +1,8 @@
 let express = require('express');
 require('dotenv').config()
+let bodyParser = require('body-parser')
 let app = express();
+app.use(bodyParser.urlencoded({extended: false}))
 app.use(function middlewear(req, res, next){
     console.log(`${req.method} ${req.path} - ${req.ip}`)
     next()
