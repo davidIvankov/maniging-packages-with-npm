@@ -7,7 +7,7 @@ app.use(function middlewear(req, res, next){
 })
 app.use("/public", express.static(__dirname + "/public"))
 app.get("/now", function(req, res, next){
-    req.now = new Date().toString()
+    req.time = new Date().toString()
     next()
 
 },
